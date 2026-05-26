@@ -19,7 +19,7 @@ import ReactDOM from "react-dom/client";
 //REACT COMPONENT
 // const heading =(
 //     <h1 className="heading" tabIndex="5">
-//         Namaste React - Using J
+//         Namaste React - Using JS
 //     </h1>
 // );
 
@@ -38,7 +38,7 @@ import ReactDOM from "react-dom/client";
 // const jsxHeading = (
 //     <div>
 //         <h1 id="heading">Namaste React - Using JSX</h1>
-//         <h2>This is a subheading</h2>
+//         <h2>This is a sub-heading</h2>
 //     </div>
 // );
 // code 2:
@@ -114,18 +114,33 @@ import ReactDOM from "react-dom/client";
 
 
 //THE BELOW CODE IS KNOWN AS COMPOSITION OF COMPONENTS
+// COMPONENT 1: A small, reusable title
 const Title = () => (
   <h2 className="head" tabIndex="5">
     This is the Title component
     </h2>
 );
-
+// COMPONENT 2: A bigger component that USES Title inside it
 const HeadingComponent = () => (
   <div id="container">
     <Title />
     <h1 className="heading">Namaste React Functional Component</h1>
   </div>
 );
-
+// Rendering: Find the <div id="root"> in index.html and inject our component there.
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent />);
+
+
+
+///BEHIND  THE SCENES:)
+// Your JSX Code
+//      │
+//      ▼ (Babel compiles)
+// React.createElement()
+//      │
+//      ▼ (produces)
+// Plain JS Object  { type: 'h1', props: {...} }
+//      │
+//      ▼ (root.render() paints it)
+// Real HTML in the Browser DOM

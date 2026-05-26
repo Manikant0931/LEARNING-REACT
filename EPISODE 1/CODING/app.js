@@ -12,6 +12,7 @@
 // Manipulate the HTML DOM using React
 
 // Create nested React Elements
+// React.createElement(tag, props, children)
 const heading = React.createElement(
   "h1",
   {

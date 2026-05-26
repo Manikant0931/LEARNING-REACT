@@ -41,6 +41,16 @@ const parent = React.createElement("div", { id: "parent" }, [
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
 root1.render(parent);
 
+// VISUAL TREE:
+// parent
+// │
+// ├── child
+// │    ├── h1
+// │    └── h2
+// │
+// └── child2
+//      ├── h1
+//      └── h2
 
 
 
